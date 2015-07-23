@@ -1,13 +1,35 @@
 <?php
 namespace Transformers;
+use Fly\GadgetFly;
+use RocketDump\BigRocket;
 
 abstract class Transformers
 {
-    abstract public function transform();
+    private $flyBehaviour;
 
-    abstract public function shoot();
+    private $rocketBihaviour;
 
-    abstract public function fly();
+    public function __construct()
+    {
+        $this->flyBehaviour = new GadgetFly();
+        $this->rocketBihaviour = new BigRocket();
+    }
+    public function transform() {}
+
+    public function shoot()
+    {
+        print  " I can shoot<br/>";
+    }
+
+    public function fly()
+    {
+        $this->flyBehaviour->fly();
+    }
+
+    public function rocketLaunch()
+    {
+        $this->rocketBihaviour->rocketLaunch();
+    }
 
     public function getId()
     {

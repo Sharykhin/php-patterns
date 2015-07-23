@@ -8,13 +8,4 @@ class BamblBee extends Transformers
         print "BamblBee - transform<br/>";
     }
 
-    public function shoot()
-    {
-        print "BamblBee - good shoot<br/>";
-    }
-
-    public function fly()
-    {
-
-    }
 }

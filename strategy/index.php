@@ -5,6 +5,8 @@ require_once 'vendor/autoload.php';
 $autoloader = new Gleez\Loader\Autoloader();
 
 $autoloader->setNamespaces('Transformers', 'src/Transformers');
+$autoloader->setNamespaces('Fly', 'src/Fly');
+$autoloader->setNamespaces('RocketDump', 'src/RocketDump');
 
 $autoloader->register();
 
@@ -19,6 +21,7 @@ foreach($transformers as $transformer) {
     $transformer->transform();
     $transformer->shoot();
     $transformer->fly();
+    $transformer->rocketLaunch();
     $transformer->getId();
     echo "<br/>";
 }
