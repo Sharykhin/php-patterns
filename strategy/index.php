@@ -17,6 +17,12 @@ $transformers = [
     new Transformers\BamblBee()
 ];
 
+$bamblBee = new Transformers\BamblBee();
+$bamblBee->setFlyBehaviour(new Fly\GadgetFly());
+
+$bamblBee->fly();
+
+
 foreach($transformers as $transformer) {
     $transformer->transform();
     $transformer->shoot();

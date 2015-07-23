@@ -1,20 +1,32 @@
 <?php
 namespace Transformers;
+use Fly\FlyInterface;
 use Fly\GadgetFly;
 use RocketDump\BigRocket;
+use RocketDump\RocketDumpInterface;
 
 abstract class Transformers
 {
-    private $flyBehaviour;
+    protected $flyBehaviour;
 
-    private $rocketBihaviour;
+    protected $rocketBihaviour;
 
     public function __construct()
     {
         $this->flyBehaviour = new GadgetFly();
         $this->rocketBihaviour = new BigRocket();
     }
-    public function transform() {}
+    abstract public function transform();
+
+    public function setFlyBehaviour(FlyInterface $flyBehaviour)
+    {
+        $this->flyBehaviour = $flyBehaviour;
+    }
+
+    public function setRocketBehaviour(RocketDumpInterface $rocketBehavior)
+    {
+        $this->rocketBihaviour = $rocketBehavior;
+    }
 
     public function shoot()
     {
